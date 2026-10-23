@@ -47,4 +47,7 @@ if st.button("churn prediction"):
     })
     prediction=model.predict(new_customer)
 
-    st.success(f"customer will churn:{prediction[0]:,.2f}")
+    if prediction[0]==1:
+        st.error("customer will churn")
+    else:
+        st.success("customer will not  churn")
